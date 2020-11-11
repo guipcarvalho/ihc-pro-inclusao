@@ -12,13 +12,12 @@ export default StyleSheet.create({
         backgroundColor: '#D32F2F',
         alignItems: 'center',
         justifyContent: 'center',
-        
     },
     headerTitle: {
         color: 'white',
-        fontSize: 25,
+        fontSize: 28,
     },
-    content: {
+    bottomContainer: {
         paddingTop: 20,
         alignItems: 'center',
         justifyContent: 'center',
@@ -33,27 +32,36 @@ export default StyleSheet.create({
         shadowOpacity: 0.2,
         paddingTop: 30
     },
+    content: {
+        flex: 1,
+        alignSelf: 'stretch',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
     login: {
         backgroundColor: '#D32F2F',
-        padding: 20,
+        padding: 15,
         width: "80%",
         alignItems: 'center',
         borderRadius: 30,
         margin: 10
     },
     loginText: {
-        color: 'white'
+        color: 'white',
+        fontSize: 15
     },
     registration: {
-        padding: 20,
+        padding: 15,
         width: "80%",
         alignItems: 'center',
         borderRadius: 30,
         margin: 10,
         borderWidth: 1,
-        borderColor: '#D32F2F'
+        borderColor: '#D32F2F',
+        marginBottom: 20
     },
     registrationText: {
-        color: '#D32F2F'
+        color: '#D32F2F',
+        fontSize: 15
     },
 })
