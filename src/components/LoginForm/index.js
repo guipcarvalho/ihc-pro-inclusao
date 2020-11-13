@@ -4,7 +4,7 @@ import { TextInputMask } from 'react-native-masked-text';
 
 import styles from './styles'
 
-export default function LoginForm({ onCancel }) {
+export default function LoginForm({ onCancel, onLogin }) {
     const [cpf, setCpf] = useState('');
 
     return (
@@ -21,10 +21,10 @@ export default function LoginForm({ onCancel }) {
                 placeholder="Senha"
                 secureTextEntry={true}
             />
-            <TouchableOpacity style={styles.register}>
-                <Text style={styles.registerText}>Cadastrar</Text>
+            <TouchableOpacity style={styles.register} onPress={onLogin}>
+                <Text style={styles.registerText}>Entrar</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.cancel} onPress={() => onCancel() }>
+            <TouchableOpacity style={styles.cancel} onPress={onCancel}>
                 <Text style={styles.cancelText}>Cancelar</Text>
             </TouchableOpacity>
         </View>

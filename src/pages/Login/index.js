@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TouchableOpacity, View, Dimensions} from 'react-native';
+import { Text, TouchableOpacity, View, Dimensions, StatusBar} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -49,7 +49,11 @@ export default function Login() {
                                 setIsVisible(false);
                                 fadeIn(buttonOpacity).start();
                             });
-                    }} />
+                    }} 
+                    onLogin={() => {
+                        navigation.navigate('App');
+                    }}
+                    />
                 </Animated.View>
             )
         
@@ -81,6 +85,7 @@ export default function Login() {
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle="light-content" />
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>Pró-Inclusão Ufjf</Text>
             </View>

@@ -7,7 +7,8 @@ export default StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'stretch',
         marginTop: 10,
-        paddingBottom: 20
+        paddingBottom: 20,
+        paddingHorizontal: 20
     },
     field: { 
         height: 50, 

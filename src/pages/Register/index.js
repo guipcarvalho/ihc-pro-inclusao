@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { View, TextInput, Text, ScrollView, TouchableOpacity, Platform} from "react-native";
+import { View, TextInput, Text, ScrollView, TouchableOpacity, Platform, StatusBar} from "react-native";
 import { TextInputMask } from "react-native-masked-text";
 import RNPickerSelect from 'react-native-picker-select';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -21,6 +21,7 @@ export default function Register()
             extraHeight={100}
             style={{ flex: 1, flexDirection: 'column' }}
             >
+                <StatusBar barStyle="light-content" />
                 <View style={styles.container}>
                     <Text style={styles.headerText}>Insira os seus dados cadastrais</Text>
                     <TextInput
