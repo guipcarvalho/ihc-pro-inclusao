@@ -6,7 +6,7 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         marginTop: Constants.statusBarHeight + 5,
-        alignItems: 'center',
+        alignItems: 'center'
     },
     logo: {
         width: 80,
@@ -21,7 +21,7 @@ export default StyleSheet.create({
         flex: 1,
         alignSelf: 'stretch',
         paddingHorizontal: 10,
-        paddingTop: 15
+        paddingVertical: 10,
     },
     searchBox: {
         height: 40,
@@ -55,5 +55,10 @@ export default StyleSheet.create({
         shadowOffset: { height: 5, width: 5 },
         shadowRadius: 10,
         shadowOpacity: 0.4,
+    },
+    headerContainer: {
+        alignSelf: 'stretch',
+        marginHorizontal: 10,
+        marginBottom: 10
     }
 });

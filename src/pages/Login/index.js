@@ -51,7 +51,7 @@ export default function Login() {
                             });
                     }} 
                     onLogin={() => {
-                        navigation.navigate('App');
+                        navigation.navigate('Home');
                     }}
                     />
                 </Animated.View>

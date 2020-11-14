@@ -14,14 +14,5 @@ export default StyleSheet.create({
         shadowOffset: { height: 0, width: 0 },
         shadowRadius: 5,
         shadowOpacity: 0.2,
-    },
-    mainText: {
-        fontSize: 18,
-        fontWeight: '500'
-    },
-    secondaryText: {
-        fontSize: 15,
-        fontWeight: '300',
-        color: '#aaa'
     }
 });

@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import AppRoute from './app.route'
+import OrganizationRegistration from '../pages/OrganizationRegistration'
+import HelpRegistration from '../pages/HelpRegistration'
 
 const AppStack = createStackNavigator()
 
@@ -21,11 +23,16 @@ export default function MainRoute() {
                 }} />
                 <AppStack.Screen name="Register" component={Register} options={{
                     headerTitle: 'Cadastro',
-                    
                 }}/>
-                <AppStack.Screen name="App" component={AppRoute} options={{
+                <AppStack.Screen name="Home" component={AppRoute} options={{
                     headerShown: false,
                 }} />
+                <AppStack.Screen name="OrganizationRegistration" component={OrganizationRegistration} options={{
+                    headerTitle: 'Cadastro de Organização',
+                }}/>
+                <AppStack.Screen name="HelpRegistration" component={HelpRegistration} options={{
+                    headerTitle: 'Cadastro de Pessoa',
+                }}/>
             </AppStack.Navigator>
         </NavigationContainer>
     )
