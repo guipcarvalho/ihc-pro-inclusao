@@ -30,12 +30,6 @@ export default function AppRoute() {
                     return (<Feather name="globe" size={iconSize} color={color} />)
                 }
             }} />
-            <Tab.Screen name="Social" component={Social} options={{
-                tabBarLabel: "Social",
-                tabBarIcon: ({ color }) => {
-                    return (<Ionicons name="ios-people" size={28} color={color} />)
-                }
-            }} />
             <Tab.Screen name="Donation" component={Donation} options={{
                 tabBarLabel: "Doações",
                 tabBarIcon: ({ color }) => {
