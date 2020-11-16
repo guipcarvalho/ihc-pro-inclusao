@@ -51,4 +51,13 @@ export default StyleSheet.create({
         color: '#D32F2F',
         fontSize: 15
     },
+    qtdContainer: {
+        alignSelf: 'stretch',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    qtdText: {
+        color: '#ccc',
+        marginHorizontal: 15
+    }
 });

@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar, TextInput, View, TouchableOpacity, Text } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-
+import NumericInput from 'react-native-numeric-input'
 
 import styles from './styles'
 
 export default function DonationRegistration() {
-    const [birth, setBirth] = useState('');
-    const [cpf, setCpf] = useState('');
     const navigation = useNavigation()
     return (
         <KeyboardAwareScrollView 
@@ -28,11 +26,19 @@ export default function DonationRegistration() {
                     style={styles.field}
                     placeholder="Organização"
                 />
-                <TextInput
-                    style={styles.field}
-                    placeholder="Quantidade"
-                    keyboardType="number-pad"
-                />
+                <View style={styles.qtdContainer}>
+                    <Text style={styles.qtdText}>Quantidade:</Text>
+                    <NumericInput 
+                        minValue={0}
+                        containerStyle={styles.numericContainer}
+                        inputStyle={styles.numericContainer}
+                        totalWidth={150}
+                        totalHeight={40}
+                        rounded
+                        reachMinDecIconStyle={{ opacity: 0 }}
+                    />
+                </View>
+
                 <TextInput
                     style={[styles.field, {height: 100}]}
                     placeholder="Descrição"
