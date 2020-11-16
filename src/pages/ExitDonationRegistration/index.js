@@ -9,15 +9,14 @@ import {
   Platform,
   StatusBar
 } from "react-native";
-import { TextInputMask } from "react-native-masked-text";
 import RNPickerSelect from "react-native-picker-select";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import NumericInput from 'react-native-numeric-input';
+
 
 import styles from "./styles";
 
-export default function SaidaDoacao() {
-  const [date, setDate] = useState("");
-  const [cpf, setCpf] = useState("");
+export default function ExitDonationRegistration() {
   const [organicacao, setOrganizacao] = useState("");
   const [item, setItem] = useState("");
 
@@ -27,10 +26,16 @@ export default function SaidaDoacao() {
     <KeyboardAwareScrollView
       behavior={Platform.OS == "ios" ? "padding" : "height"}
       extraHeight={100}
-      style={{ flex: 1, flexDirection: "column" }}
+      style={{ flex: 1, backgroundColor: 'white', flexDirection: "column" }}
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.container}>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoHeaderText}>Doar para</Text>
+          <Text style={styles.infoName}>Almir Felipe de Arruda</Text>
+          <Text style={styles.secondaryText}>154.654.785-54</Text>
+          <Text style={styles.secondaryText}>São Matheus</Text>
+        </View>
         <RNPickerSelect
           onValueChange={(value) => setOrganizacao(value)}
           items={[
@@ -65,12 +70,23 @@ export default function SaidaDoacao() {
             inputAndroid: styles.field
           }}
         />
-        <TextInput style={styles.field} placeholder="Quantidade" number />
+        <View style={styles.qtdContainer}>
+            <Text style={styles.qtdText}>Quantidade:</Text>
+            <NumericInput 
+                minValue={0}
+                containerStyle={styles.numericContainer}
+                inputStyle={styles.numericContainer}
+                totalWidth={150}
+                totalHeight={40}
+                rounded
+                reachMinDecIconStyle={{ opacity: 0 }}
+            />
+        </View>
         <TouchableOpacity
           style={styles.register}
           onPress={() => navigation.goBack()}
         >
-          <Text style={styles.registerText}>Cadastrar</Text>
+          <Text style={styles.registerText}>Salvar</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.cancel}

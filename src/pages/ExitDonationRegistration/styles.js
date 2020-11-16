@@ -49,4 +49,34 @@ export default StyleSheet.create({
         color: '#D32F2F',
         fontSize: 15
     },
+    qtdContainer: {
+        alignSelf: 'stretch',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    qtdText: {
+        color: '#ccc',
+        marginHorizontal: 15
+    },
+    infoContainer: {
+        alignSelf: 'stretch',
+        marginHorizontal: 15,
+        marginTop: 20,
+        marginBottom: 15
+    },
+    infoHeaderText: {
+        fontSize: 25,
+        fontWeight: '600',
+        marginBottom: 5
+    },
+    infoName: {
+        fontSize: 18,
+        marginBottom: 3
+    },
+    secondaryText: {
+        fontSize: 15,
+        fontWeight: '300',
+        color: '#555',
+        marginVertical: 3
+    }
 });

@@ -7,7 +7,7 @@ import AppRoute from "./app.route";
 import OrganizationRegistration from "../pages/OrganizationRegistration";
 import HelpRegistration from "../pages/HelpRegistration";
 import DonationRegistration from "../pages/DonationRegistration";
-import SaidaDoacao from "./../pages/SaidaDoacao/index";
+import ExitDonationRegistration from "./../pages/ExitDonationRegistration";
 
 const AppStack = createStackNavigator();
 
@@ -66,8 +66,8 @@ export default function MainRoute() {
           }}
         />
         <AppStack.Screen
-          name="SaidaDoacao"
-          component={SaidaDoacao}
+          name="ExitDonationRegistration"
+          component={ExitDonationRegistration}
           options={{
             headerTitle: "Fazer Doação"
           }}

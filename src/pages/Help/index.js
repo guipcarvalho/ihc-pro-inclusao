@@ -17,9 +17,9 @@ export default function Help() {
         data={[{}, {}, {}, {}, {}, {}, {}, {}]}
         renderItem={(item) => {
           return (
-            <Card onPress={() => navigation.navigate("SaidaDoacao")}>
+            <Card>
               <TouchableOpacity
-                onPress={() => navigation.navigate("SaidaDoacao")}
+                onPress={() => navigation.navigate("ExitDonationRegistration")}
               >
                 <Text style={styles.mainText}>Luís Guilherme Carvalho</Text>
                 <Text style={styles.secondaryText}>Nasc: 11/02/1992</Text>
