@@ -9,6 +9,7 @@ import styles from './styles';
 
 export default function Register()
 {
+    const [organicacao, setOrganizacao] = useState("");
     const [date, setDate] = useState('');
     const [cpf, setCpf] = useState('');
     const [sex, setSex] = useState('');
@@ -62,9 +63,22 @@ export default function Register()
                             inputAndroid: styles.field
                         }}
                     />
-                    <TextInput
-                        style={styles.field}
-                        placeholder="Instituição"
+                    <RNPickerSelect
+                        onValueChange={(value) => setOrganizacao(value)}
+                        items={[
+                            { label: "SOS Juiz de Fora 1", value: "SOS Juiz de Fora 1" },
+                            { label: "SOS Juiz de Fora 2", value: "SOS Juiz de Fora 2" },
+                            { label: "SOS Juiz de Fora 3", value: "SOS Juiz de Fora 3" }
+                        ]}
+                        value={organicacao}
+                        placeholder={{
+                            inputLabel: "Selecione uma Organização",
+                            label: "Selecione uma Organização"
+                        }}
+                        style={{
+                            inputIOS: styles.field,
+                            inputAndroid: styles.field
+                        }}
                     />
                     <TextInput
                         style={styles.field}

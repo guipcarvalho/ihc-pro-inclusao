@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar, TextInput, View, TouchableOpacity, Text } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -8,7 +8,9 @@ import RNPickerSelect from "react-native-picker-select";
 import styles from './styles'
 
 export default function DonationRegistration() {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
+    const [organicacao, setOrganizacao] = useState("");
+
     return (
         <KeyboardAwareScrollView 
             behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
