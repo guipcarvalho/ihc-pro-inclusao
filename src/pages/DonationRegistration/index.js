@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar, TextInput, View, TouchableOpacity, Text } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import NumericInput from 'react-native-numeric-input'
+import RNPickerSelect from "react-native-picker-select";
 
 import styles from './styles'
 
@@ -22,9 +23,22 @@ export default function DonationRegistration() {
                     placeholder="Nome do produto"
                 />
                 
-                <TextInput
-                    style={styles.field}
-                    placeholder="Organização"
+                <RNPickerSelect
+                    onValueChange={(value) => setOrganizacao(value)}
+                    items={[
+                        { label: "SOS Juiz de Fora 1", value: "SOS Juiz de Fora 1" },
+                        { label: "SOS Juiz de Fora 2", value: "SOS Juiz de Fora 2" },
+                        { label: "SOS Juiz de Fora 3", value: "SOS Juiz de Fora 3" }
+                    ]}
+                    value={organicacao}
+                    placeholder={{
+                        inputLabel: "Selecione uma Organização",
+                        label: "Selecione uma Organização"
+                    }}
+                    style={{
+                        inputIOS: styles.field,
+                        inputAndroid: styles.field
+                    }}
                 />
                 <View style={styles.qtdContainer}>
                     <Text style={styles.qtdText}>Quantidade:</Text>

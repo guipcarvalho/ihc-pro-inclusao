@@ -56,7 +56,7 @@ export default function Register()
                             { label: 'Feminino', value: 'fem' },
                             { label: 'Não quero declarar', value: 'na' },
                         ]}
-                        placeholder={{ inputLabel: 'Selecione um item', label: 'Selecione um item' }}
+                        placeholder={{ inputLabel: 'Selecione seu sexo', label: 'Selecione seu sexo' }}
                         style={{
                             inputIOS: styles.field,
                             inputAndroid: styles.field
