@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import AppRoute from "./app.route";
 import OrganizationRegistration from "../pages/OrganizationRegistration";
 import HelpRegistration from "../pages/HelpRegistration";
+import DonationRegistration from "../pages/DonationRegistration";
 import SaidaDoacao from "./../pages/SaidaDoacao/index";
 
 const AppStack = createStackNavigator();
@@ -55,6 +56,13 @@ export default function MainRoute() {
           component={HelpRegistration}
           options={{
             headerTitle: "Cadastro de Pessoa"
+          }}
+        />
+        <AppStack.Screen
+          name="DonationRegistration"
+          component={DonationRegistration}
+          options={{
+            headerTitle: "Cadastro de Doação"
           }}
         />
         <AppStack.Screen
