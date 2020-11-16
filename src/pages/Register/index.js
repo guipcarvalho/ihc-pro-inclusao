@@ -19,7 +19,7 @@ export default function Register()
         <KeyboardAwareScrollView 
             behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
             extraHeight={100}
-            style={{ flex: 1, flexDirection: 'column' }}
+            style={{ flex: 1, backgroundColor: 'white', flexDirection: 'column' }}
             >
                 <StatusBar barStyle="light-content" />
                 <View style={styles.container}>

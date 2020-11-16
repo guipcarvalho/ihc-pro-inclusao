@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Organization from '../pages/Organization';
 import { Feather, FontAwesome5, Ionicons } from '@expo/vector-icons';
 import Donation from '../pages/Donation';
-import Social from '../pages/Social';
 import Help from '../pages/Help';
 
 const Tab = createBottomTabNavigator();

@@ -1,62 +1,51 @@
 import React, { useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import { StatusBar, TextInput, View, TouchableOpacity, Text } from 'react-native';
-import { TextInputMask } from 'react-native-masked-text';
-import RNPickerSelect from 'react-native-picker-select';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 
 import styles from './styles'
 
-export default function HelpRegistration() {
+export default function DonationRegistration() {
     const [birth, setBirth] = useState('');
     const [cpf, setCpf] = useState('');
     const navigation = useNavigation()
     return (
-        <View style={styles.page}>
-            <StatusBar barStyle="light-content" />
-            <TextInput
-                style={styles.field}
-                placeholder="Nome completo"
-            />
-            <TextInputMask 
-                type={'datetime'}
-                style={styles.field}
-                onChangeText={text => setBirth(text)}
-                value={birth}
-                placeholder="Data de Nascimento"
-                options={{
-                    format: 'DD/MM/YYYY'
-                }}
-            />
-            <TextInputMask 
-                type={'cpf'}
-                style={styles.field}
-                onChangeText={text => setCpf(text)}
-                value={cpf}
-                placeholder="CPF"
-            />
-            <RNPickerSelect
-                onValueChange={(value) => setSex(value)}
-                items={[
-                    { label: 'Masculino', value: 'masc' },
-                    { label: 'Feminino', value: 'fem' },
-                    { label: 'Não quero declarar', value: 'na' },
-                ]}
-                placeholder={{ inputLabel: 'Selecione um item', label: 'Selecione um item' }}
-                style={{
-                    inputIOS: styles.field,
-                    inputAndroid: styles.field
-                }}
-            />
-            <TextInput
-                style={styles.field}
-                placeholder="Bairro"
-            />
-            <TouchableOpacity style={styles.register}>
-                <Text style={styles.registerText}>Salvar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.cancel} onPress={() => navigation.goBack()}>
-                <Text style={styles.cancelText}>Voltar</Text>
-            </TouchableOpacity>
-        </View>
+        <KeyboardAwareScrollView 
+            behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+            extraHeight={100}
+            style={{ flex: 1, backgroundColor: 'white', flexDirection: 'column' }}
+            >
+
+            <View style={styles.page}>
+                <StatusBar barStyle="light-content" />
+                <TextInput
+                    style={styles.field}
+                    placeholder="Nome do produto"
+                />
+                
+                <TextInput
+                    style={styles.field}
+                    placeholder="Organização"
+                />
+                <TextInput
+                    style={styles.field}
+                    placeholder="Quantidade"
+                    keyboardType="number-pad"
+                />
+                <TextInput
+                    style={[styles.field, {height: 100}]}
+                    placeholder="Descrição"
+                    multiline
+                />
+                <TouchableOpacity style={styles.register}>
+                    <Text style={styles.registerText}>Salvar</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.cancel} onPress={() => navigation.goBack()}>
+                    <Text style={styles.cancelText}>Voltar</Text>
+                </TouchableOpacity>
+            </View>
+        </KeyboardAwareScrollView>
+        
     );
 }
